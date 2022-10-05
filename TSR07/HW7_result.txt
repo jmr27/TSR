@@ -1,0 +1,69 @@
+ 
+          ################################################################################################
+          #                         RESULTS FROM RUNNING FORM RELIABILITY ANALYSIS                       #
+          ################################################################################################
+ 
+Number of iterations: 13
+ 
+Time to complete the analysis:    0.013
+ 
+Reliability index beta1: 1.5138
+ 
+Failure probability pf1: 6.50360e-02
+ 
+SENSITIVITIES OF THE RELIABILITY INDEX WITH RESPECT TO DISTRIBUTION PARAMETERS
+----------------------------------------------------------------------------------------------
+ var          mean        std dev           par1           par2           par3           par4
+  1    2.25036e-01   -1.43113e-01    1.88283e-01    2.25036e-01    0.00000e+00    0.00000e+00
+  2   -7.12383e-01   -5.47389e-01   -3.99983e+00   -3.42522e+00    0.00000e+00    0.00000e+00
+  3   -1.81253e+00  -1.87380e+00   -3.65346e-01   -1.44719e+00    0.00000e+00    0.00000e+00
+----------------------------------------------------------------------------------------------
+
+SENSITIVITIES of THE FAILURE PROBABILITY WITH RESPECT TO DISTRIBUTION PARAMETERS
+----------------------------------------------------------------------------------------------
+ var          mean        std dev           par1           par2           par3           par4
+  1   -2.85455e-02    1.81537e-02   -2.38834e-02   -2.85455e-02   -0.00000e+00   -0.00000e+00
+  2    9.03648e-02    6.94355e-02    5.07372e-01    4.34485e-01   -0.00000e+00   -0.00000e+00
+  3    2.29917e-01    2.37689e-01    4.63436e-02    1.83574e-01   -0.00000e+00   -0.00000e+00
+----------------------------------------------------------------------------------------------
+
+alpha = 
+   -0.3549
+    0.6512
+    0.6707
+u_star = 
+   -0.5379
+    0.9861
+    1.0148
+x_star = 
+   17.7742
+    5.6573
+    4.4135 
+G at design point = 8.76274491190543e-06
+gradient of G at design point =
+    9.77918447378814
+  -17.9423144490309
+  -18.4798637431545
+
+               #################################################################################
+               #        RESULTS FROM RUNNING CURVATURE-FITTED SORM RELIABILITY ANALYSIS        #
+               #################################################################################
+ 
+Time to complete the analysis:    0.187
+ 
+Main curvatures in (n-1)x(n-1) space:    4.97984e-01    4.90174e-02
+ 
+                                           Breitung formula
+Reliability index beta2 :                  1.6708
+Failure probability  pf2:                  4.73820e-02
+ 
+                                           Improved Breitung (Hohenbichler / Rackwitz)
+Reliability index beta2 :                  1.7033
+Failure probability  pf2:                  4.42539e-02
+ 
+                                           Tvedt Exact Integral
+Reliability index beta2 :                  1.7136
+Failure probability  pf2:                  4.33055e-02
+ 
+As we can denote that beta_SORM = beta_FORM+sigma^{i=n-1}_{i=1}{k_i*u_i''^2},
+if sign of k_i is negative beta will decrease and if positive, beta will increase. 
