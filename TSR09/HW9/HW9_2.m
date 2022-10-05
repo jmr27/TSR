@@ -1,0 +1,18 @@
+obdata = [115.58 121.51 167.34 137.00 223.63];
+sigma = 45;
+mu = MLE(obdata,sigma);
+beta_MLE = (300-mu)/sqrt(30^2+45^2);
+mu_prior = 170;
+sigma_prior = 85;
+[mu_posterior,sigma_posterior] = Conjugate(obdata,mu_prior,sigma_prior);
+mug = 300; sigmag = sqrt(30^2+45^2);
+mus = mu_posterior; sigmas = sigma_posterior;
+Pf = Pred_pf(mug,sigmag,mus,sigmas);
+beta_gen = norminv(1-Pf);
+beta_mean = (300-mus)/sqrt(30^2+45^2);
+beta_var = sigmas^2/sigmag^2;
+beta_sigma = beta_var^(1/2);
+beta_interval70 = [beta_mean-1.04*beta_sigma,beta_mean+1.04*beta_sigma];
+beta_interval95 = [beta_mean-1.96*beta_sigma,beta_mean+1.96*beta_sigma];
+beta_interval70 = [beta_gen-1.04*beta_sigma,beta_gen+1.04*beta_sigma];
+beta_interval95 = [beta_gen-1.96*beta_sigma,beta_gen+1.96*beta_sigma];
